@@ -1,45 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>Demonstrating Pelican, a static site generator</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Demonstrating Pelican, a static site generator | Jim's Philosophy
+</title>
+  <link rel="canonical" href="/pelican-demo.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  
+  <meta name="description" content="When I was setting up this blog, I initially started with Wordpress, but then I discovered that many (tech-savvy) people were using static site generators. It took me some time to understand what that meant. Most of the common blogging platforms generate websites dynamically. Wordpress requires SQL to manage a ...">
+
+
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Jim's Philosophy </a></h1>
-                <nav><ul>
-                    <li><a href="/pages/about.html">About Jim</a></li>
-                    <li><a href="/pages/admissions.html">College Admissions Counselling</a></li>
-                    <li><a href="/category/posts.html">posts</a></li>
-                    <li class="active"><a href="/category/website.html">Website</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">Jim's Philosophy</a></h1>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="/pages/about.html">About Jim</a></li>
+            <li class="list-inline-item"><a href="/pages/admissions.html">College Admissions Counselling</a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Demonstrating Pelican, a static site generator
+</h1>
+      <hr>
+  <article class="article">
     <header>
-      <h1 class="entry-title">
-        <a href="/pelican-demo.html" rel="bookmark"
-           title="Permalink to Demonstrating Pelican, a static site generator">Demonstrating Pelican, a static site generator</a></h1>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2018-06-23T01:56:00-07:00">
+          <i class="fa fa-clock-o"></i>
+          Sat 23 June 2018
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="/category/website.html">Website</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-user-o"></i>
+              <a href="/author/terri-yu.html">Terri Yu</a>          </li>
+          <li class="list-inline-item">
+            <i class="fa fa-files-o"></i>
+              <a href="/tag/meta.html">#meta</a>          </li>
+      </ul>
     </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-06-23T01:56:00-07:00">
-                Published: Sat 23 June 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/terri-yu.html">Terri Yu</a>
-        </address>
-<p>In <a href="/category/website.html">Website</a>.</p>
-<p>tags: <a href="/tag/meta.html">meta</a> </p>
-</footer><!-- /.post-info -->      <!-- PELICAN_BEGIN_SUMMARY -->
+    <div class="content">
+      <!-- PELICAN_BEGIN_SUMMARY -->
 
 <div id="wrapper" style="width:100%; text-align:center">
     <img src="http://terriyu.info/blog/static/images/pelican-docs-800px.png" alt="Pelican logo and Github account" />
@@ -240,21 +262,28 @@ to <code>.txt</code> to avoid confusing the Pelican compiler.</p>
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
-    </div><!-- /.entry-content -->
-
+    </div>
   </article>
-</section>
-        <section id="extras" class="body">
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+    </div>
+  </div>
 
-                            <li><a href="https://fb.com/EonSin">Facebook</a></li>
-                            <li><a href="https://instagram.com/jim.mango/">Instagram</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="/authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="/tags.html">Tags</a></li>
+  </ul>
+  <!--
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+  -->
+</div>    </div>
+  </footer>
 </body>
+
 </html>
