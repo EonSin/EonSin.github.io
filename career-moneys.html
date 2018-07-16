@@ -1040,16 +1040,27 @@ h6:hover .anchor-link {
 <h1 id="The-income-curves-of-different-career-paths-after-Caltech">The income curves of different career paths after Caltech<a class="anchor-link" href="#The-income-curves-of-different-career-paths-after-Caltech">¶</a></h1><p>First post! I will explore using some salary data and crude models, several different career paths that a Caltech undergraduate can take after four years of torture:</p>
 <ol>
 <li>Software development job at a large software company (like Google or equivalent)</li>
-<li>Software development job at a large software company and then a startup at age 30</li>
-<li>Investment banking, consulting, quant hedge fund</li>
-<li>PhD and then go to a quant hedge fund: fake academic</li>
-<li>PhD and attempt to become a professor: true academic</li>
+<li>Software development job at a large software company and then a startup (Snap) at age 30</li>
+<li>Investment banking (Goldman)</li>
+<li>Consulting (Boston Consulting Group)</li>
+<li>Quant hedge fund (Two Sigma)</li>
+<li>PhD and then go to a quant hedge fund (2$\sigma$): fake academic</li>
+<li>PhD and attempt to become a professor (all Caltech): true academic</li>
 </ol>
-<h3 id="Some-assumptions">Some assumptions<a class="anchor-link" href="#Some-assumptions">¶</a></h3><p>Everybody works until retirement (assume at 65), and the non-true academics will have similar eating habits and expenses for most of their life. The true academic (option 5) and the fake academic (option 4) will eat free food from campus events and Panda Express during grad school, because they are grad students. This habit will continue into later life for the true academic (option 5) because being a post-doc isnt much better. We will not look at constant career switches. Housing will be \$2500/month for the non-academics until age 30, and then become \$3500/month because they will require more space. For the academics, academic housing will be \$1200 per month, and also go to \$3500/month after age 30.</p>
+<h3 id="Some-assumptions">Some assumptions<a class="anchor-link" href="#Some-assumptions">¶</a></h3><ul>
+<li>Everybody works until retirement (assume at 65)</li>
+<li>The non-true academics will have similar eating habits and expenses for most of their life</li>
+<li>The true academic (option 7) and the fake academic (option 6) will eat free food from campus events and Panda Express during grad school, because they are grad students. This habit will continue into later life for the true academic (option 7) because being a post-doc isn't much better. </li>
+<li>We will not look at constant career switches. </li>
+<li>Housing will be \$2500/month for the non-academics until age 30, and then become \$3500/month because they will require more space. </li>
+<li>For the academics, academic housing will be \$1200 per month, and also go to \$3500/month after age 30.</li>
+</ul>
 <h3 id="Base-Salaries"><a href="https://www.glassdoor.com/Salary">Base Salaries</a><a class="anchor-link" href="#Base-Salaries">¶</a></h3><ol>
 <li>Google SWE: \$120000</li>
 <li>Google SWE \$120000 and senior SWE at Snapchat: \$160000</li>
-<li>Papa Goldman: \$74000, BCG: \$150000, Two Sigma: \$150000</li>
+<li>Papa Goldman: \$74000 analyst monkey (?!)</li>
+<li>BCG: \$150000 consultant</li>
+<li>Two Sigma: \$150000 quant</li>
 <li>Caltech grad student \$32000 and Two Sigma quant researcher: \$175000</li>
 <li>Caltech grad student \$32000, post-doc \$50000, assistant prof \$137000, associate prof \$150000, real prof \$210000</li>
 </ol>
@@ -1086,7 +1097,7 @@ h6:hover .anchor-link {
 <span class="n">wages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">([[</span><span class="mi">120000</span><span class="p">,</span><span class="mi">120000</span><span class="p">,</span><span class="mi">74000</span><span class="p">,</span><span class="mi">150000</span><span class="p">,</span><span class="mi">150000</span><span class="p">,</span><span class="mi">32000</span><span class="p">,</span><span class="mi">32000</span><span class="p">]],</span> <span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 
 <span class="c1"># wage changes:</span>
-<span class="n">wages</span><span class="p">[</span><span class="mi">1</span><span class="p">][(</span><span class="mi">30</span><span class="o">-</span><span class="mi">22</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">160000</span> <span class="c1"># snapchat</span>
+<span class="n">wages</span><span class="p">[</span><span class="mi">1</span><span class="p">][(</span><span class="mi">30</span><span class="o">-</span><span class="mi">22</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">160000</span> <span class="c1"># snapchat guy</span>
 <span class="n">wages</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][(</span><span class="mi">28</span><span class="o">-</span><span class="mi">22</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">175000</span> <span class="c1"># two sigma quant researcher after phd</span>
 
 <span class="c1"># the true academic:</span>
@@ -1105,7 +1116,7 @@ h6:hover .anchor-link {
 <span class="n">food</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">[(</span><span class="mi">30</span><span class="o">-</span><span class="mi">22</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">365</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">([[</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">]],</span> 
                                             <span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">30</span><span class="o">-</span><span class="mi">22</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">food</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][(</span><span class="mi">35</span><span class="o">-</span><span class="mi">22</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">365</span><span class="o">*</span><span class="mi">35</span> <span class="c1"># true academic food</span>
-<span class="n">happiness</span> <span class="o">=</span> <span class="mi">15000</span>
+<span class="n">happiness</span> <span class="o">=</span> <span class="mi">15000</span> <span class="c1"># vacations and stuff</span>
 
 <span class="c1"># total</span>
 <span class="n">net_earnings</span> <span class="o">=</span> <span class="n">wages</span><span class="o">-</span><span class="n">housing</span><span class="o">-</span><span class="n">food</span>
@@ -2105,7 +2116,7 @@ rkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="But-that-is-nonsense,-since-our-Goldman-guy-is-in-debt-by-age-65...">But that is nonsense, since our Goldman guy is in debt by age 65...<a class="anchor-link" href="#But-that-is-nonsense,-since-our-Goldman-guy-is-in-debt-by-age-65...">¶</a></h3><p>So wage growth needs to be accounted for. Coming soon!</p>
+<h3 id="But-that-is-nonsense,-since-our-Goldman-analyst-monkey-is-in-debt-by-age-65,-and-still-an-analyst-monkey-alongside-his-22-year-old-PowerPoint-generating-monkey-peers...">But that is nonsense, since our Goldman analyst monkey is in debt by age 65, and still an analyst monkey alongside his 22 year old PowerPoint-generating monkey peers...<a class="anchor-link" href="#But-that-is-nonsense,-since-our-Goldman-analyst-monkey-is-in-debt-by-age-65,-and-still-an-analyst-monkey-alongside-his-22-year-old-PowerPoint-generating-monkey-peers...">¶</a></h3><p>So wage growth and promotions need to be accounted for. Coming soon!</p>
 </div>
 </div>
 </div>
