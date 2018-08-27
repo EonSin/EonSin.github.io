@@ -3583,9 +3583,9 @@ Why are we doing this?</img></p>
 </ul>
 <h1 id="k-fold-Cross-Validation">k-fold Cross Validation<a class="anchor-link" href="#k-fold-Cross-Validation">¶</a></h1><p>Idea: If we are not overfitting, then:</p>
 <ul>
-<li>If we can do well on one of the 20% blocks, then if we switch up <em>which data the block points to</em>, we should do equally well
-<img alt="5-fold CV" src="images/5fcv.png" style="max-width: 100%;"/></li>
+<li>If we can do well on one of the 20% blocks, then if we switch up <em>which data the block points to</em>, we should do equally well</li>
 </ul>
+<p><img alt="5-fold CV" src="images/5fcv.png" style="max-width: 100%;"/></p>
 <p>Here, we have $k=5$. The steps to using this:</p>
 <ol>
 <li>Train on the first training split, then test on the first validation split</li>
@@ -3626,7 +3626,7 @@ Why are we doing this?</img></p>
 <li>Training models takes time. Compared to the 80:20 split, 5-fold CV takes 5x as long</li>
 <li>$k$-fold CV takes $k$ times as long as the normal split</li>
 </ul>
-<p>It is worth the time.</p>
+<p><strong>CV is worth the time.</strong></p>
 </div>
 </div>
 </div>
