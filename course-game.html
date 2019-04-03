@@ -78,15 +78,19 @@ where <span class="math">\(X_t\)</span> is <span class="math">\(X\)</span> dolla
 <p>My friends recently made me play the board game "Power Grid" by Friedemann Friese. In this game, one spends money on power stations, raw materials for the power stations, and contracts for supplying power to cities. One earns money for supplying a city with power. The more cities you supply, the more money you get at the end of the year. I usually think board games are stupid, but this one is pretty fun.</p>
 <p><img src="images/powergrid.jpg" alt="Power Grid Cover" style="max-width: 100%; margin:0px auto; display:block;"/></p>
 <h3>Power Stations</h3>
-<p>In this game, we need to <em>bid</em> for power stations. To help win the game, it is nice to know how much the power station is <em>worth</em>. How do we calculate this? Let's start with some game facts:
-- the power station uses raw materials to generate power
-- the power station supplies power to a certain number (1-7) of cities
-- we can only own 3 power stations at a time; if we try to exceed this we will need to throw one out</p>
-<p>At the very least, we should consider:
-- the cost of raw materials on the market (uranium is more expensive than coal, until late stages in the game)
-- how many cities we have contracts for (if we have 15 contracts, we don't want a small station that can supply only 1 city)
-- what power stations we have already (if we already own 2 nuclear generators, we probably want something else since buying too much uranium drives up the price)
-- <strong>the expected lifetime of this power station</strong></p>
+<p>In this game, we need to <em>bid</em> for power stations. To help win the game, it is nice to know how much the power station is <em>worth</em>. How do we calculate this? Let's start with some game facts:</p>
+<ul>
+<li>the power station uses raw materials to generate power</li>
+<li>the power station supplies power to a certain number (1-7) of cities</li>
+<li>we can only own 3 power stations at a time; if we try to exceed this we will need to throw one out</li>
+</ul>
+<p>At the very least, we should consider:</p>
+<ul>
+<li>the cost of raw materials on the market (uranium is more expensive than coal, until late stages in the game)</li>
+<li>how many cities we have contracts for (if we have 15 contracts, we don't want a small station that can supply only 1 city)</li>
+<li>what power stations we have already (if we already own 2 nuclear generators, we probably want something else since buying too much uranium drives up the price)</li>
+<li><strong>the expected lifetime of this power station</strong></li>
+</ul>
 <p><strong>The last consideration</strong> is the most difficult to estimate and it is where the time value of goods comes in. If we think about the profit each generator makes per turn <span class="math">\(t\)</span> as <span class="math">\(X\)</span>, then we can think of the present value of the generator as <span class="math">\(V\)</span>:
 </p>
 <div class="math">$$V = \sum_{t=0}^{\infty} D_tX,$$</div>
@@ -100,10 +104,12 @@ The number <span class="math">\(T\)</span> is primarily determined by how many c
 <p>So there is quite clearly a time value of power stations in this board game. What about the time value of other things?</p>
 <h2>The time value of knowledge and skill: course selection at Caltech as a board game</h2>
 <p>When critics attack some mathematical models, they frequently say the world is "not that simple" and "continuous, not discrete". These statements are generally true outside of modelling, but in special cases we can view the world in discrete timesteps.</p>
-<p>There are <span class="math">\(3\)</span> terms per year, and a typical total of around <span class="math">\(4\)</span> years for an undergraduate degree at Caltech. Before each term <span class="math">\(t\)</span>, students must select courses that they will then take,
-- subject to a budget constraint of <span class="math">\(51\)</span> "units" of coursework per turn and 
-- a list of "graduation requirements" that must be fulfilled over all turns.
-- Each course has some expected payoff (whether monetary,  opportunity, or enjoyment-based) which is estimated by the student using limited information from course catalog descriptions, rumours from friends, supposedly knowledgeable upperclassmen, course reviews, etc.</p>
+<p>There are <span class="math">\(3\)</span> terms per year, and a typical total of around <span class="math">\(4\)</span> years for an undergraduate degree at Caltech. Before each term <span class="math">\(t\)</span>, students must select courses that they will then take,</p>
+<ul>
+<li>subject to a budget constraint of <span class="math">\(51\)</span> "units" of coursework per turn and </li>
+<li>a list of "graduation requirements" that must be fulfilled over all turns.</li>
+<li>Each course has some expected payoff (whether monetary,  opportunity, or enjoyment-based) which is estimated by the student using limited information from course catalog descriptions, rumours from friends, supposedly knowledgeable upperclassmen, course reviews, etc.</li>
+</ul>
 <p>The final point is an undoubtedly true statement. However, I have yet to think of anyone at Caltech who views courses this way, including professors in the social sciences (who advise randomly selected first-year students).</p>
 <p>An even more profound conclusion is that the expected payoff of a course is not only conditional on the course content, but also <strong>which year/term (turn) the student is taking it.</strong> Just as low-throughput or coal-fuelled power stations become worth less in late stages of that board game, some courses have an "expiry date" as well.</p>
 <p>So how should we play this game to maximise our total payoff over the <span class="math">\(4\times 3=12\)</span> terms? Let's first look at suggestions from the official Caltech Course Catalog:</p>
@@ -136,20 +142,24 @@ The number <span class="math">\(T\)</span> is primarily determined by how many c
 </blockquote>
 <p>The Core (general education) is designed to generate inspiration and overall scientific competence in society, but this will probably not happen within the 4 years of the board game. Type (3) courses have negative payoff in the short term, but they might be positive in 10 years.</p>
 <h4>How do we determine what course is Type (1), and what is Type (3)?</h4>
-<p>The usual sources of information to calculate the expectation value of course payoffs are:
-- catalog descriptions and course syllabi
-- rumours from friends
-- supposedly knowledgeable upperclassmen who took the course
-- course reviews (TQFR reports)</p>
-<p>Catalog descriptions and course reviews are pretty good, but in my experience there are some better sources:
-- attending the first day of a class that has high uncertainty in expected payoff to properly assess it.
-  - There is no penalty for dropping and adding in the first week.
-- very recent, successful alumni in fields similar to mine
-  - Recent, because course information becomes outdated quickly, and strong nostalgia tends to bring out intellectual masochism
-  - Successful, because I too would like to be successful
-  - Fields similar to mine, because everything else is irrelevant
-- limiting the "knowledgeable" upperclassmen and friends to those with career paths aligned with my own
-  - If I could re-live my university experience and a friend in theoretical CS tells me "analytical multivariable calculus is very important for you and will also be super fun", I will spit at them in the face.</p>
+<p>The usual sources of information to calculate the expectation value of course payoffs are:</p>
+<ul>
+<li>catalog descriptions and course syllabi</li>
+<li>rumours from friends</li>
+<li>supposedly knowledgeable upperclassmen who took the course</li>
+<li>course reviews (TQFR reports)</li>
+</ul>
+<p>Catalog descriptions and course reviews are pretty good, but in my experience there are some better sources:</p>
+<ul>
+<li>attending the first day of a class that has high uncertainty in expected payoff to properly assess it.</li>
+<li>There is no penalty for dropping and adding in the first week.</li>
+<li>very recent, successful alumni in fields similar to mine</li>
+<li>Recent, because course information becomes outdated quickly, and strong nostalgia tends to bring out intellectual masochism</li>
+<li>Successful, because I too would like to be successful</li>
+<li>Fields similar to mine, because everything else is irrelevant</li>
+<li>limiting the "knowledgeable" upperclassmen and friends to those with career paths aligned with my own</li>
+<li>If I could re-live my university experience and a friend in theoretical CS tells me "analytical multivariable calculus is very important for you and will also be super fun", I will spit at them in the face.</li>
+</ul>
 <h4>Always figure out who is giving you opinions. The more similar someone is to you, the more credible their opinions are.</h4>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
